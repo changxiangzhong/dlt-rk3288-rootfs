@@ -35,9 +35,22 @@ lb config \
  --mode debian \
  --security true \
  --system normal \
- --updates true
+ --updates true \
+ --parent-mirror-binary 'http://archive.debian.org/debian'              \
+ --parent-mirror-binary-security 'http://archive.debian.org/debian'     \
+ --parent-mirror-bootstrap 'http://archive.debian.org/debian'           \
+ --parent-mirror-chroot 'http://archive.debian.org/debian'              \
+ --parent-mirror-chroot-security 'http://archive.debian.org/debian'     \
+ --parent-mirror-debian-installer 'http://archive.debian.org/debian'    \
+ --mirror-binary 'http://archive.debian.org/debian'             \
+ --mirror-binary-security 'http://archive.debian.org/debian'    \
+ --mirror-bootstrap 'http://archive.debian.org/debian'          \
+ --mirror-chroot 'http://archive.debian.org/debian'             \
+ --mirror-chroot-security 'http://archive.debian.org/debian'    \
+ --mirror-debian-installer 'http://archive.debian.org/debian'
 
 echo "I: copy customization"
 test -d customization && cp -rf customization/* config/
 
 echo "I: done"
+
