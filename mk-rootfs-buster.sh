@@ -1,4 +1,5 @@
 #!/bin/bash -e
+set -x
 
 # Directory contains the target rootfs
 TARGET_ROOTFS_DIR="binary"
@@ -62,24 +63,23 @@ apt-get install -f -y
 #---------------Setup Graphics-------------- 
 apt-get install -y weston
 cd /usr/lib/arm-linux-gnueabihf
-wget https://github.com/rockchip-linux/libmali/raw/rockchip/lib/arm-linux-gnueabihf/libmali-midgard-r13p0-r0p0-wayland.so
-ln -s libmali-midgard-r13p0-r0p0-wayland.so libmali-midgard-r13p0-r0p0-wayland.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libEGL.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libEGL.so.1
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libEGL.so.1.0.0
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libGLESv2.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libGLESv2.so.2
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libGLESv2.so.2.0.0
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libMaliOpenCL.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libOpenCL.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libgbm.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libgbm.so.1
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libgbm.so.1.0.0
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libwayland-egl.so
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libwayland-egl.so.1
-ln -sf libmali-midgard-r13p0-r0p0-wayland.so libwayland-egl.so.1.0.0
+wget http://hp640.mynetgear.com/libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so
+ln -s libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libEGL.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libEGL.so.1
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libEGL.so.1.0.0
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libGLESv2.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libGLESv2.so.2
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libGLESv2.so.2.0.0
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libMaliOpenCL.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libOpenCL.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libgbm.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libgbm.so.1
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libgbm.so.1.0.0
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libwayland-egl.so
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libwayland-egl.so.1
+ln -sf libmali-midgard-t76x-r18p0-r1p0-wayland-gbm.so libwayland-egl.so.1.0.0
 cd /
-
 
 #---------------Custom Script-------------- 
 systemctl mask systemd-networkd-wait-online.service
