@@ -17,3 +17,9 @@ linaro-rootfs.img
 release
 build
 .lock
+*.swo
+*.swp
+*-log
+*-log.*
+
+linaro-buster-alip-20241223-1.tar.gz
